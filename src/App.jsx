@@ -20,79 +20,141 @@ const nav=[
 ];
 
 function Garden({mood,onMood}){
- const [stage,setStage]=useState(mood||"new");
- const states={
-  happy:{
-    label:"Sunshine day",
-    emoji:"☀️",
-    sky:"sunny",
-    flowers:["🌻","🌼"]
-  },
+  const [stage,setStage]=useState(mood||"new");
 
-  sad:{
-    label:"A rainy day",
-    emoji:"🌧️",
-    sky:"rain",
-    flowers:["🌱","🌿"]
-  },
+  const states={
+    happy:{
+      label:"A garden full of sunshine",
+      emoji:"🌞",
+      sky:"happy",
+      flowers:[
+        "🌻","🌷","🌼","🌸","🌺","🌹","🌷","🌻",
+        "🌼","🌸","🌺","🌹","🌷","🌻","🌼","🌸",
+        "🌺","🌷","🌻","🌼"
+      ]
+    },
 
-  heartbroken:{
-    label:"Be gentle with your heart",
-    emoji:"💗",
-    sky:"broken",
-    flowers:["🥀","🍃"]
-  },
+    okay:{
+      label:"A calm little garden",
+      emoji:"🌤️",
+      sky:"okay",
+      flowers:[
+        "🌷","🌼","🌸","🌺","🌻","🌷","🌼","🌸",
+        "🌺","🌷","🌻","🌼","🌸","🌺"
+      ]
+    },
 
-  anxious:{
-    label:"Slow breaths, little by little",
-    emoji:"🌬️",
-    sky:"breeze",
-    flowers:["🌿","🌱"]
-  },
+    sad:{
+      label:"A garden that needs some care",
+      emoji:"🥀",
+      sky:"sad",
+      flowers:[
+        "🥀","🍂","🥀","🍂","🥀","🍂","🥀","🍂",
+        "🥀","🍂","🥀","🍂"
+      ]
+    },
 
-  new:{
-    label:"Spring — a new story",
-    emoji:"🌸",
-    sky:"spring",
-    flowers:["🌱","🌸"]
-  }
-};
- const s=states[stage]||states.new;
- useEffect(()=>{if(mood)setStage(mood)},[mood]);
- return <section className={"gardenCard garden-"+s.sky}>
-<div className="gardenScene">
+    anxious:{
+      label:"A quiet little garden",
+      emoji:"🌿",
+      sky:"anxious",
+      flowers:[
+        "🌱","🌿","🌱","🌷","🌿"
+      ]
+    },
 
-  <div className="sun">☀</div>
+    heartbroken:{
+      label:"A garden healing slowly",
+      emoji:"💔",
+      sky:"heartbroken",
+      flowers:[
+        "🥀","🥀","🍂","🥀","🍂","🥀","🥀","🍂"
+      ]
+    },
 
-  <div className="cloud c1">☁</div>
-  <div className="cloud c2">☁</div>
+    new:{
+      label:"A garden beginning again",
+      emoji:"🌱",
+      sky:"new",
+      flowers:[
+        "🌱","🌷","🌱","🌸","🌱","🌷"
+      ]
+    }
+  };
 
-  {stage==="sad" && (
-    <div className="rain">::::::::</div>
-  )}
+  useEffect(()=>{
+    if(mood) setStage(mood);
+  },[mood]);
 
-  <div className="gardenAtmosphere">
-    <span className="sparkle s1">✦</span>
-    <span className="sparkle s2">✦</span>
-    <span className="sparkle s3">✦</span>
-  </div>
+  const s=states[stage]||states.new;
 
-  <div className="ground">
-    <div className="soil"></div>
+  return (
+    <section className={`gardenCard garden-${s.sky}`}>
 
-    {s.flowers.map((f,i)=>(
-      <div
-        key={i}
-        className={`flower f${i}`}
-      >
-        <span>{f}</span>
+      <div className="gardenHead">
+        <div>
+          <span className="eyebrow">DIGITAL GARDEN</span>
+          <h2>{s.emoji} {s.label}</h2>
+          <p>Your little garden changes with how you're feeling.</p>
+        </div>
+
+        <select
+          value={stage}
+          onChange={e=>{
+            setStage(e.target.value);
+            onMood?.(e.target.value);
+          }}
+          aria-label="Garden mood"
+        >
+          <option value="happy">Happy</option>
+          <option value="okay">Okay</option>
+          <option value="sad">Sad</option>
+          <option value="anxious">Anxious</option>
+          <option value="heartbroken">Heartbroken</option>
+          <option value="new">New beginning</option>
+        </select>
       </div>
-    ))}
-  </div>
 
-</div>
- 
- </section>
+      <div className="gardenScene">
+
+        {stage==="happy" && (
+          <div className="gardenSun">☀️</div>
+        )}
+
+        {stage==="heartbroken" && (
+          <div className="gardenRain">
+            <span>│ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │</span>
+            <span> │ │ │ │ │ │ │ │ │ │ │ │ │ │ │</span>
+            <span>│ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │</span>
+            <span> │ │ │ │ │ │ │ │ │ │ │ │ │ │ │</span>
+          </div>
+        )}
+
+        <div className="gardenCloud cloudOne">☁️</div>
+        <div className="gardenCloud cloudTwo">☁️</div>
+
+        <div className="gardenField">
+
+          <div className="gardenSoil"></div>
+
+          <div className="flowerBed">
+            {s.flowers.map((flower,i)=>(
+              <span
+                key={i}
+                className={`gardenFlower flower${i%6}`}
+              >
+                {flower}
+              </span>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  );
+}
 }
 
 function Home({setPage,mood,setMood}){
