@@ -91,11 +91,7 @@ function Garden({mood,onMood}){
   </div>
 
 </div>
-  <div className="gardenScene">
-   <div className="sun">☀</div><div className="cloud c1">☁</div><div className="cloud c2">☁</div>
-   {stage==="sad"&&<div className="rain">⋮ ⋮ ⋮ ⋮ ⋮ ⋮ ⋮ ⋮ ⋮ ⋮</div>}
-   <div className="ground"><div className="soil"></div>{s.flowers.map((f,i)=><div key={i} className={"flower f"+i}><span>{f}</span><i></i></div>)}</div>
-  </div>
+ 
  </section>
 }
 
