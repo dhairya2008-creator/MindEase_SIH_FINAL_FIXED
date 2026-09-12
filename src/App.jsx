@@ -60,44 +60,35 @@ function Garden({mood,onMood}){
  const s=states[stage]||states.new;
  useEffect(()=>{if(mood)setStage(mood)},[mood]);
  return <section className={"gardenCard garden-"+s.sky}>
- <div className={`gardenScene garden-${s.sky}`}>
+<div className="gardenScene">
 
-  <div className="gardenMoon"></div>
+  <div className="sun">☀</div>
 
-  <div className="gardenGlow glow1"></div>
-  <div className="gardenGlow glow2"></div>
-
-  <div className="gardenHills hill1"></div>
-  <div className="gardenHills hill2"></div>
-
-  <div className="gardenPond">
-    <div className="pondRipple r1"></div>
-    <div className="pondRipple r2"></div>
-    <div className="pondRipple r3"></div>
-  </div>
-
-  <div className="gardenLantern">🏮</div>
-
-  <div className="firefly fly1">✦</div>
-  <div className="firefly fly2">✦</div>
-  <div className="firefly fly3">✦</div>
-  <div className="firefly fly4">✦</div>
-
-  <div className="gardenLeaf leaf1">🌿</div>
-  <div className="gardenLeaf leaf2">🌿</div>
-
-  {s.flowers.map((f,i)=>(
-    <div key={i} className={`gardenFlower flower${i}`}>
-      {f}
-    </div>
-  ))}
+  <div className="cloud c1">☁</div>
+  <div className="cloud c2">☁</div>
 
   {stage==="sad" && (
-    <div className="gardenRain">
-      <span>•</span><span>•</span><span>•</span>
-      <span>•</span><span>•</span><span>•</span>
-    </div>
+    <div className="rain">::::::::</div>
   )}
+
+  <div className="gardenAtmosphere">
+    <span className="sparkle s1">✦</span>
+    <span className="sparkle s2">✦</span>
+    <span className="sparkle s3">✦</span>
+  </div>
+
+  <div className="ground">
+    <div className="soil"></div>
+
+    {s.flowers.map((f,i)=>(
+      <div
+        key={i}
+        className={`flower f${i}`}
+      >
+        <span>{f}</span>
+      </div>
+    ))}
+  </div>
 
 </div>
   <div className="gardenScene">
