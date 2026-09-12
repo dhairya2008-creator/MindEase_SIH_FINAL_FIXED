@@ -190,3 +190,215 @@
   from{transform:translateY(-180px);}
   to{transform:translateY(350px);}
 }
+/* ===== BIG STEM FLOWERS ===== */
+
+.gardenFlower{
+  position:absolute;
+  bottom:28px;
+  width:70px;
+  height:150px;
+  z-index:5;
+}
+
+.gf0{left:5%}
+.gf1{left:14%;bottom:24px}
+.gf2{left:23%;bottom:32px}
+.gf3{left:32%;bottom:20px}
+.gf4{left:42%;bottom:28px}
+.gf5{left:53%;bottom:22px}
+.gf6{left:64%;bottom:30px}
+
+.gardenFlower:nth-child(8){left:73%;bottom:25px}
+.gardenFlower:nth-child(9){left:82%;bottom:32px}
+.gardenFlower:nth-child(10){left:10%;bottom:48px}
+.gardenFlower:nth-child(11){left:29%;bottom:43px}
+.gardenFlower:nth-child(12){left:48%;bottom:50px}
+.gardenFlower:nth-child(13){left:68%;bottom:45px}
+.gardenFlower:nth-child(14){left:88%;bottom:42px}
+
+/* STEM */
+
+.gardenFlower .stem{
+  position:absolute;
+  width:6px;
+  height:105px;
+  background:linear-gradient(90deg,#245d38,#58a85d,#245d38);
+  left:32px;
+  bottom:0;
+  border-radius:10px;
+  transform-origin:bottom;
+}
+
+/* LEAVES */
+
+.gardenFlower .leaves span{
+  position:absolute;
+  width:32px;
+  height:15px;
+  background:#4f9b55;
+  border-radius:100% 0 100% 0;
+}
+
+.gardenFlower .leaves span:first-child{
+  left:4px;
+  bottom:45px;
+  transform:rotate(-25deg);
+}
+
+.gardenFlower .leaves span:last-child{
+  left:31px;
+  bottom:65px;
+  transform:rotate(25deg) scaleX(-1);
+}
+
+/* PETALS */
+
+.gardenFlower .petals{
+  position:absolute;
+  left:12px;
+  top:5px;
+  width:48px;
+  height:48px;
+}
+
+.gardenFlower .petals i{
+  position:absolute;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  background:#ff8fbd;
+}
+
+.gardenFlower .petals i:nth-child(1){
+  left:11px;
+  top:0;
+}
+
+.gardenFlower .petals i:nth-child(2){
+  left:0;
+  top:12px;
+}
+
+.gardenFlower .petals i:nth-child(3){
+  right:0;
+  top:12px;
+}
+
+.gardenFlower .petals i:nth-child(4){
+  left:11px;
+  bottom:0;
+}
+
+/* CENTER */
+
+.gardenFlower .petals b{
+  position:absolute;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#ffd65c;
+  left:15px;
+  top:15px;
+  z-index:2;
+}
+
+/* HAPPY */
+
+.gardenFlower.happy .petals i{
+  background:#ff8fbd;
+}
+
+.gardenFlower.happy:nth-child(3n) .petals i{
+  background:#ffd45c;
+}
+
+.gardenFlower.happy:nth-child(4n) .petals i{
+  background:#b991ff;
+}
+
+.gardenFlower.happy .stem{
+  animation:flowerSway 4s ease-in-out infinite;
+}
+
+@keyframes flowerSway{
+  0%,100%{transform:rotate(-2deg)}
+  50%{transform:rotate(3deg)}
+}
+
+/* OKAY */
+
+.gardenFlower.okay .petals i{
+  background:#f5a6c8;
+}
+
+.gardenFlower.okay:nth-child(3n) .petals i{
+  background:#f6d878;
+}
+
+/* SAD / DRY */
+
+.gardenFlower.dry{
+  opacity:.65;
+}
+
+.gardenFlower.dry .stem{
+  background:#6b6045;
+  transform:rotate(8deg);
+}
+
+.gardenFlower.dry .petals{
+  transform:rotate(18deg) scale(.8);
+}
+
+.gardenFlower.dry .petals i{
+  background:#9b746f;
+}
+
+.gardenFlower.dry .petals b{
+  background:#8a7040;
+}
+
+.gardenFlower.dry .leaves span{
+  background:#65724b;
+}
+
+/* ANXIOUS */
+
+.gardenFlower.anxious{
+  transform:scale(.82);
+}
+
+.gardenFlower.anxious .stem{
+  animation:anxiousSway 2s ease-in-out infinite;
+}
+
+@keyframes anxiousSway{
+  0%,100%{transform:rotate(-4deg)}
+  50%{transform:rotate(4deg)}
+}
+
+/* HEARTBROKEN */
+
+.gardenFlower.broken{
+  opacity:.72;
+}
+
+.gardenFlower.broken .stem{
+  transform:rotate(12deg);
+}
+
+.gardenFlower.broken .petals{
+  transform:rotate(25deg) scale(.85);
+}
+
+.gardenFlower.broken .petals i{
+  background:#a9788d;
+}
+
+.gardenFlower.broken .petals b{
+  background:#80606c;
+}
+
+.gardenFlower.broken .leaves span{
+  background:#64705a;
+}
