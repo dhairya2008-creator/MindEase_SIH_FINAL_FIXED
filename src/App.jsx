@@ -155,7 +155,7 @@ function Garden({mood,onMood}){
     </section>
   );
 }
-}
+
 
 function Home({setPage,mood,setMood}){
  const today=new Date().getDate();
