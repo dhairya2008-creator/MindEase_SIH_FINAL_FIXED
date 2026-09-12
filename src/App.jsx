@@ -23,64 +23,54 @@ function Garden({mood,onMood}){
   const [stage,setStage]=useState(mood||"new");
 
   const states={
-    happy:{
-      label:"A garden full of sunshine",
-      emoji:"🌞",
-      sky:"happy",
-      flowers:[
-        "🌻","🌷","🌼","🌸","🌺","🌹","🌷","🌻",
-        "🌼","🌸","🌺","🌹","🌷","🌻","🌼","🌸",
-        "🌺","🌷","🌻","🌼"
-      ]
-    },
+  happy:{
+    label:"A garden in bloom",
+    emoji:"☀️",
+    sky:"sunny",
+    flowerCount:14,
+    flowerMood:"happy"
+  },
 
-    okay:{
-      label:"A calm little garden",
-      emoji:"🌤️",
-      sky:"okay",
-      flowers:[
-        "🌷","🌼","🌸","🌺","🌻","🌷","🌼","🌸",
-        "🌺","🌷","🌻","🌼","🌸","🌺"
-      ]
-    },
+  okay:{
+    label:"A peaceful garden",
+    emoji:"🌤️",
+    sky:"okay",
+    flowerCount:9,
+    flowerMood:"okay"
+  },
 
-    sad:{
-      label:"A garden that needs some care",
-      emoji:"🥀",
-      sky:"sad",
-      flowers:[
-        "🥀","🍂","🥀","🍂","🥀","🍂","🥀","🍂",
-        "🥀","🍂","🥀","🍂"
-      ]
-    },
+  sad:{
+    label:"A rainy day",
+    emoji:"🌧️",
+    sky:"rain",
+    flowerCount:7,
+    flowerMood:"dry"
+  },
 
-    anxious:{
-      label:"A quiet little garden",
-      emoji:"🌿",
-      sky:"anxious",
-      flowers:[
-        "🌱","🌿","🌱","🌷","🌿"
-      ]
-    },
+  anxious:{
+    label:"A quiet little garden",
+    emoji:"🌬️",
+    sky:"breeze",
+    flowerCount:3,
+    flowerMood:"anxious"
+  },
 
-    heartbroken:{
-      label:"A garden healing slowly",
-      emoji:"💔",
-      sky:"heartbroken",
-      flowers:[
-        "🥀","🥀","🍂","🥀","🍂","🥀","🥀","🍂"
-      ]
-    },
+  heartbroken:{
+    label:"Be gentle with your heart",
+    emoji:"💗",
+    sky:"broken",
+    flowerCount:6,
+    flowerMood:"broken"
+  },
 
-    new:{
-      label:"A garden beginning again",
-      emoji:"🌱",
-      sky:"new",
-      flowers:[
-        "🌱","🌷","🌱","🌸","🌱","🌷"
-      ]
-    }
-  };
+  new:{
+    label:"Spring — a new story",
+    emoji:"🌸",
+    sky:"spring",
+    flowerCount:8,
+    flowerMood:"okay"
+  }
+};
 
   useEffect(()=>{
     if(mood) setStage(mood);
