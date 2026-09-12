@@ -108,17 +108,17 @@ function Garden({mood,onMood}){
       <div className="gardenScene">
 
         {stage==="happy" && (
-          <div className="gardenSun">☀️</div>
-        )}
+  <div className="gardenSun"></div>
+)}
 
-        {stage==="heartbroken" && (
-          <div className="gardenRain">
-            <span>│ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │</span>
-            <span> │ │ │ │ │ │ │ │ │ │ │ │ │ │ │</span>
-            <span>│ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │</span>
-            <span> │ │ │ │ │ │ │ │ │ │ │ │ │ │ │</span>
-          </div>
-        )}
+{stage==="heartbroken" && (
+  <div className="gardenRain">
+    <span>│ │ │ │ │ │ │ │ │ │ │ │</span>
+    <span>│ │ │ │ │ │ │ │ │ │ │ │</span>
+    <span>│ │ │ │ │ │ │ │ │ │ │ │</span>
+    <span>│ │ │ │ │ │ │ │ │ │ │ │</span>
+  </div>
+)}
 
         <div className="gardenCloud cloudOne">☁️</div>
         <div className="gardenCloud cloudTwo">☁️</div>
