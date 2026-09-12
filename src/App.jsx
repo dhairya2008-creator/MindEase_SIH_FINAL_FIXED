@@ -141,7 +141,7 @@ export default function App(){
  const go=p=>setPage(p);
  if(page==="landing")return <Landing goLogin={()=>setPage("login")}/>;
  if(page==="login")return <Login onLogin={()=>setPage("home")} back={()=>setPage("landing")}/>;
- const current=useMemo(()=>nav.find(n=>n[0]===page)?.[1]||"Home",[page]);
+ const current=nav.find(n=>n[0]===page)?.[1]||"Home";
  return <div className="appShell">
   <aside className="sidebar"><div className="brand"><div className="brandMark">M</div><div><b>MindEase</b><small>a little space for you</small></div></div>
    <nav>{nav.map(([id,label,I])=><button key={id} className={page===id?"active":""} onClick={()=>go(id)}><I size={18}/>{label}</button>)}</nav>
