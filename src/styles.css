@@ -402,3 +402,143 @@
 .gardenFlower.broken .leaves span{
   background:#64705a;
 }
+/* ===== MOOD GARDEN ATMOSPHERE ===== */
+
+.gardenScene.garden-sunny{
+  background:
+    radial-gradient(
+      circle at 78% 18%,
+      rgba(255,235,130,.9),
+      transparent 20%
+    ),
+    linear-gradient(
+      180deg,
+      #9ddcff 0%,
+      #d9f4ff 50%,
+      #8bcf78 51%,
+      #4d9b58 100%
+    );
+}
+
+/* BIG BRIGHT SUN */
+
+.garden-sunny .gardenSun{
+  display:block;
+  position:absolute;
+  right:10%;
+  top:25px;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:#ffe477;
+  box-shadow:
+    0 0 25px rgba(255,220,80,.9),
+    0 0 70px rgba(255,220,80,.55);
+  z-index:2;
+}
+
+
+/* OKAY — FLOWERS WITHOUT STRONG SUN */
+
+.gardenScene.garden-okay{
+  background:
+    linear-gradient(
+      180deg,
+      #b9d9df 0%,
+      #e7eeee 50%,
+      #9acb83 51%,
+      #548f5a 100%
+    );
+}
+
+.garden-okay .gardenSun{
+  display:none;
+}
+
+
+/* SAD — GREY, DRY ATMOSPHERE */
+
+.gardenScene.garden-rain{
+  background:
+    linear-gradient(
+      180deg,
+      #758594 0%,
+      #aeb9c0 50%,
+      #718d68 51%,
+      #435f4b 100%
+    );
+}
+
+.garden-rain .gardenFlower{
+  opacity:.7;
+}
+
+
+/* ANXIOUS — QUIET, PALE */
+
+.gardenScene.garden-breeze{
+  background:
+    linear-gradient(
+      180deg,
+      #c9d9df 0%,
+      #edf1ef 50%,
+      #9cbd88 51%,
+      #638765 100%
+    );
+}
+
+
+/* HEARTBROKEN — DARKER */
+
+.gardenScene.garden-broken{
+  background:
+    linear-gradient(
+      180deg,
+      #707b8c 0%,
+      #a3a7b0 50%,
+      #77866e 51%,
+      #465747 100%
+    );
+}
+
+
+/* HEARTBROKEN RAIN */
+
+.gardenRain{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  overflow:hidden;
+  pointer-events:none;
+  display:flex;
+  justify-content:space-around;
+  color:rgba(205,225,245,.8);
+  font-size:18px;
+  line-height:28px;
+  letter-spacing:5px;
+}
+
+.gardenRain span{
+  animation:rainFall 1.1s linear infinite;
+}
+
+.gardenRain span:nth-child(2){
+  animation-delay:.25s;
+}
+
+.gardenRain span:nth-child(3){
+  animation-delay:.5s;
+}
+
+.gardenRain span:nth-child(4){
+  animation-delay:.75s;
+}
+
+@keyframes rainFall{
+  from{
+    transform:translateY(-200px);
+  }
+  to{
+    transform:translateY(350px);
+  }
+}
