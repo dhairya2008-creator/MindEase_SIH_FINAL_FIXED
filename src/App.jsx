@@ -1,5 +1,5 @@
 import React from "react";
-import {useEffect,useMemo,useState} from "react";
+import {useEffect,useState} from "react";
 import {LayoutDashboard,BookOpen,MessageCircle,Flower2,Wind,HeartHandshake,Settings,Sun,Moon,Heart,LogOut} from "lucide-react";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
