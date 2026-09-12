@@ -60,11 +60,46 @@ function Garden({mood,onMood}){
  const s=states[stage]||states.new;
  useEffect(()=>{if(mood)setStage(mood)},[mood]);
  return <section className={"gardenCard garden-"+s.sky}>
-  <div className="gardenHead"><div><span className="eyebrow">DIGITAL GARDEN</span><h2>{s.emoji} {s.label}</h2><p>Your little corner changes with how you're feeling.</p></div>
-   <select value={stage} onChange={e=>{setStage(e.target.value);onMood?.(e.target.value)}} aria-label="Garden mood">
-    <option value="new">New beginning</option><option value="happy">Happy</option><option value="sad">Sad</option><option value="heartbroken">Heartbroken</option><option value="anxious">Anxious</option>
-   </select>
+ <div className={`gardenScene garden-${s.sky}`}>
+
+  <div className="gardenMoon"></div>
+
+  <div className="gardenGlow glow1"></div>
+  <div className="gardenGlow glow2"></div>
+
+  <div className="gardenHills hill1"></div>
+  <div className="gardenHills hill2"></div>
+
+  <div className="gardenPond">
+    <div className="pondRipple r1"></div>
+    <div className="pondRipple r2"></div>
+    <div className="pondRipple r3"></div>
   </div>
+
+  <div className="gardenLantern">🏮</div>
+
+  <div className="firefly fly1">✦</div>
+  <div className="firefly fly2">✦</div>
+  <div className="firefly fly3">✦</div>
+  <div className="firefly fly4">✦</div>
+
+  <div className="gardenLeaf leaf1">🌿</div>
+  <div className="gardenLeaf leaf2">🌿</div>
+
+  {s.flowers.map((f,i)=>(
+    <div key={i} className={`gardenFlower flower${i}`}>
+      {f}
+    </div>
+  ))}
+
+  {stage==="sad" && (
+    <div className="gardenRain">
+      <span>•</span><span>•</span><span>•</span>
+      <span>•</span><span>•</span><span>•</span>
+    </div>
+  )}
+
+</div>
   <div className="gardenScene">
    <div className="sun">☀</div><div className="cloud c1">☁</div><div className="cloud c2">☁</div>
    {stage==="sad"&&<div className="rain">⋮ ⋮ ⋮ ⋮ ⋮ ⋮ ⋮ ⋮ ⋮ ⋮</div>}
