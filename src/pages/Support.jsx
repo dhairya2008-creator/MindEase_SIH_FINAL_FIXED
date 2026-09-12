@@ -1,0 +1,9 @@
+import React from "react";
+import {HeartHandshake,Phone,UserRound,Stethoscope,ShieldAlert,ArrowRight} from "lucide-react"; import {resources} from "../data/demo";
+export default function Support(){
+ const icons=[UserRound,Stethoscope,ShieldAlert];
+ return <><div className="pageIntro"><div><span className="kicker">SAFETY NET</span><h2>Support & resources</h2><p>MindEase is designed to complement — not replace — human support.</p></div></div>
+ <div className="supportHero"><HeartHandshake size={35}/><div><span className="kicker">HUMAN-FIRST</span><h2>You don't have to handle difficult moments alone.</h2><p>When patterns remain elevated, the system can surface a recommendation to seek appropriate human support.</p></div><button className="btn btnWhite">Connect to support <ArrowRight size={16}/></button></div>
+ <div className="resourceGrid">{resources.map((r,i)=>{const Icon=icons[i];return <div className="resourceCard" key={r.title}><div className="resourceIcon"><Icon size={21}/></div><h3>{r.title}</h3><p>{r.text}</p><button className="textBtn">{i===2?"Get help":"Explore option"} <ArrowRight size={15}/></button></div>})}</div>
+ <div className="supportBottom"><div className="panel"><h3>Safety principle</h3><p>Automated predictions should never be the sole basis for a high-stakes decision. A real deployment should define clear escalation rules, trained human review, consent, and secure handling of sensitive information.</p></div><div className="panel"><h3>Emergency reminder</h3><p>If there is immediate danger, contact local emergency services or reach a trusted adult/support person. This demo does not provide emergency response.</p></div></div>
+ </> }

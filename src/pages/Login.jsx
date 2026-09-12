@@ -1,0 +1,5 @@
+import React from "react";
+import {ArrowLeft,ShieldCheck} from "lucide-react"; import Logo from "../components/Logo";
+export default function Login({onLogin,back}){
+ return <div className="loginPage"><button className="backBtn" onClick={back}><ArrowLeft size={17}/> Back</button><div className="loginCard"><Logo/><div className="loginHeading"><span className="kicker">DEMO ACCESS</span><h1>Welcome back</h1><p>Sign in to explore the MindEase prototype.</p></div><label>Email<input placeholder="demo@mindease.app" defaultValue="demo@mindease.app"/></label><label>Password<input type="password" placeholder="••••••••" defaultValue="mindease"/></label><button className="btn btnPrimary full" onClick={onLogin}>Sign in to demo</button><div className="demoNote"><ShieldCheck size={17}/><span><b>Hackathon demo</b><br/>No real account or sensitive data is required.</span></div></div></div>
+}
