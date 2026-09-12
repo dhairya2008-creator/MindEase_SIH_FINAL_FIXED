@@ -22,12 +22,41 @@ const nav=[
 function Garden({mood,onMood}){
  const [stage,setStage]=useState(mood||"new");
  const states={
-  happy:{label:"Sunshine day",emoji:"☀️",sky:"sunny",flowers:["🌻","🌷","🌼","🌸"]},
-  sad:{label:"A rainy day",emoji:"🌧️",sky:"rain",flowers:["🌷","🌿","🌱","🌸"]},
-  heartbroken:{label:"Be gentle with your heart",emoji:"💗",sky:"broken",flowers:["🥀","🌿","🌱","🍃"]},
-  anxious:{label:"Slow breaths, little by little",emoji:"🌬️",sky:"breeze",flowers:["🌱","🌿","🌷","🌼"]},
-  new:{label:"Spring — a new story",emoji:"🌸",sky:"spring",flowers:["🌱","🌷","🌸","🌼"]}
- };
+  happy:{
+    label:"Sunshine day",
+    emoji:"☀️",
+    sky:"sunny",
+    flowers:["🌻","🌼"]
+  },
+
+  sad:{
+    label:"A rainy day",
+    emoji:"🌧️",
+    sky:"rain",
+    flowers:["🌱","🌿"]
+  },
+
+  heartbroken:{
+    label:"Be gentle with your heart",
+    emoji:"💗",
+    sky:"broken",
+    flowers:["🥀","🍃"]
+  },
+
+  anxious:{
+    label:"Slow breaths, little by little",
+    emoji:"🌬️",
+    sky:"breeze",
+    flowers:["🌿","🌱"]
+  },
+
+  new:{
+    label:"Spring — a new story",
+    emoji:"🌸",
+    sky:"spring",
+    flowers:["🌱","🌸"]
+  }
+};
  const s=states[stage]||states.new;
  useEffect(()=>{if(mood)setStage(mood)},[mood]);
  return <section className={"gardenCard garden-"+s.sky}>
