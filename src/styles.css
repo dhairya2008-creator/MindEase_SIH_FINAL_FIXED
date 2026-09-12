@@ -4,43 +4,189 @@
 .landingNav{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid #f0e5ea;background:#ffffffaa;backdrop-filter:blur(12px)}.landingLinks{display:flex;align-items:center;gap:24px}.landingLinks a{color:#7d7380;text-decoration:none;font-size:12px}.btnLight{background:#f2efff;color:#6659cc}.landingHero{min-height:600px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;padding:65px 8%;max-width:1400px;margin:auto}.heroCopy{max-width:680px}.badge{display:inline-flex;align-items:center;gap:7px;background:#fff0f4;color:#9c6e80;padding:8px 11px;border-radius:99px;font-size:10px;font-weight:800}.landingHero h1{font-size:55px;line-height:1.02;letter-spacing:-.06em;margin:20px 0 16px}.landingHero h1 span{color:#9b8cff}.landingHero p{font-size:14px;line-height:1.8;color:#766d7b;max-width:600px}.heroBtns{display:flex;gap:14px;align-items:center;margin-top:24px}.textLink{font-size:11px;color:#7368cf;text-decoration:none;font-weight:750}.trustRow{display:flex;gap:18px;margin-top:28px;flex-wrap:wrap}.trustRow span{display:flex;gap:6px;align-items:center;color:#817784;font-size:10px}.trustRow svg{color:#8f82d8}.heroVisual{height:430px;position:relative;display:grid;place-items:center}.glowOrb{position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,#fff 0,#ffe0e9 38%,#dcd4ff 68%,#ccefe3 100%);filter:blur(1px);box-shadow:0 30px 100px #a795c633}.brainCircle{width:190px;height:190px;z-index:2;background:radial-gradient(circle at 35% 28%,#fff 0 5%,#ffd8e5 6% 30%,#a99cff 60%,#9ad9c7 100%);box-shadow:0 20px 60px #9b8cff30}.floatingCard{position:absolute;z-index:3;background:#fff;border:1px solid #f0e6eb;border-radius:17px;padding:14px 16px;box-shadow:var(--shadow);display:grid;gap:5px}.floatingCard small{font-size:9px;color:#8e8491}.floatingCard b{font-size:25px}.floatingCard span{font-size:9px;color:#6da68a}.cardA{left:3%;top:85px}.cardB{right:2%;bottom:75px}.miniProgress{width:110px;height:5px;background:#eeeaf1;border-radius:99px;overflow:hidden}.miniProgress i{display:block;width:87%;height:100%;background:#9b8cff}.featureSection,.howSection{padding:65px 8%;max-width:1400px;margin:auto}.sectionHead h2,.howSection h2{font-size:31px;letter-spacing:-.05em;margin:7px 0 28px}.featureSection .featureGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.featureSection .featureCard{display:block;min-height:185px;padding:25px;background:#fff;border:1px solid var(--line);border-radius:22px}.featureSection .featureCard>span{display:block;color:#9b8cff;font-size:10px;font-weight:850;margin-bottom:34px}.featureSection .featureCard h3{font-size:16px;margin:0 0 8px}.featureSection .featureCard p{font-size:11px;line-height:1.65;color:#817784}.howSection{background:#fff6f2;max-width:none}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1200px;margin-top:25px}.step{background:#fff;border:1px solid #f0e5e7;border-radius:18px;padding:20px;display:flex;align-items:center;gap:11px}.step b{color:#9b8cff;font-size:10px}.step strong{font-size:11px}.step svg{margin-left:auto;color:#aaa0ad;width:15px}footer{padding:25px 8%;display:flex;justify-content:space-between;color:#978d98;font-size:10px}footer span{color:#b19aa4}.loginPage{display:grid;place-items:center;padding:30px;background:#fffafc}.backBtn{position:fixed;left:25px;top:25px;border:0;background:#fff;border-radius:12px;padding:10px 13px;color:#756c78}.loginCard{width:min(420px,92vw);background:#fff;border:1px solid var(--line);border-radius:27px;padding:34px;box-shadow:var(--shadow)}.loginHeading{margin:28px 0 22px}.loginHeading h1{font-size:30px;margin:5px 0}.loginHeading p{font-size:12px;color:var(--muted)}.loginCard label{display:grid;gap:7px;font-size:11px;font-weight:700;margin:12px 0}.loginCard input{border:1px solid var(--line);background:#fffafa;border-radius:12px;padding:12px;outline:0}.demoNote{margin-top:15px;padding:13px;background:#f5f2ff;border-radius:14px;color:#776c87;font-size:10px;line-height:1.5;display:flex;gap:8px}.demoNote svg{color:#8c7fda;flex:none}
 @media(max-width:850px){.landingHero{grid-template-columns:1fr;padding:45px 6%}.heroVisual{height:330px}.featureSection .featureGrid,.steps{grid-template-columns:1fr 1fr}}@media(max-width:650px){.landingLinks a{display:none}.landingHero h1{font-size:40px}.heroVisual{display:none}.featureSection .featureGrid,.steps{grid-template-columns:1fr}.landingNav{padding:0 5%}footer{padding:25px 5%}.landingHero{min-height:auto}.welcome{padding:25px}}
 .logoWrap{display:flex;align-items:center;gap:10px}.logoMark{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#b7aaff,#a7dfce);display:grid;place-items:center;color:#fff;font-weight:900}.logoText{font-weight:850;font-size:18px;letter-spacing:-.04em}.logoSub{font-size:8px;letter-spacing:.12em;color:#9a8f9b;margin-top:2px}
-<div className={`gardenScene garden-${s.sky}`}>
+/* ===== MIND EASE DIGITAL GARDEN ===== */
 
-  <div className="gardenMoon"></div>
+.gardenScene{
+  position:relative;
+  height:330px;
+  overflow:hidden;
+  border-radius:24px;
+  background:linear-gradient(180deg,#dff3ff 0%,#eef8ff 45%,#cce9c2 46%,#8acb78 100%);
+  box-shadow:inset 0 0 40px rgba(0,0,0,.08);
+}
 
-  <div className="gardenGlow glow1"></div>
-  <div className="gardenGlow glow2"></div>
+/* SUN */
 
-  <div className="gardenHills hill1"></div>
-  <div className="gardenHills hill2"></div>
+.gardenSun{
+  position:absolute;
+  right:11%;
+  top:28px;
+  font-size:58px;
+  z-index:2;
+  filter:drop-shadow(0 0 18px rgba(255,210,60,.8));
+  animation:sunGlow 3s ease-in-out infinite;
+}
 
-  <div className="gardenPond">
-    <div className="pondRipple r1"></div>
-    <div className="pondRipple r2"></div>
-    <div className="pondRipple r3"></div>
-  </div>
+@keyframes sunGlow{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.08);}
+}
 
-  <div className="gardenLantern">🏮</div>
+/* CLOUDS */
 
-  <div className="firefly fly1">✦</div>
-  <div className="firefly fly2">✦</div>
-  <div className="firefly fly3">✦</div>
-  <div className="firefly fly4">✦</div>
+.gardenCloud{
+  position:absolute;
+  font-size:42px;
+  opacity:.55;
+  z-index:2;
+}
 
-  <div className="gardenLeaf leaf1">🌿</div>
-  <div className="gardenLeaf leaf2">🌿</div>
+.cloudOne{left:15%;top:42px;}
+.cloudTwo{left:55%;top:75px;opacity:.35;}
 
-  {s.flowers.map((f,i)=>(
-    <div key={i} className={`gardenFlower flower${i}`}>
-      {f}
-    </div>
-  ))}
+/* FIELD */
 
-  {stage==="sad" && (
-    <div className="gardenRain">
-      <span>•</span><span>•</span><span>•</span>
-      <span>•</span><span>•</span><span>•</span>
-    </div>
-  )}
+.gardenField{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:190px;
+  background:linear-gradient(180deg,#8fd078,#65ad62);
+  border-radius:50% 50% 0 0;
+}
 
-</div>
+.gardenSoil{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:38px;
+  background:linear-gradient(180deg,#795548,#51372e);
+}
+
+/* FLOWERS */
+
+.flowerBed{
+  position:absolute;
+  left:3%;
+  right:3%;
+  bottom:28px;
+  height:145px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-around;
+  z-index:5;
+}
+
+.gardenFlower{
+  display:block;
+  font-size:42px;
+  transform-origin:bottom center;
+  animation:flowerSway 4s ease-in-out infinite;
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.2));
+}
+
+.gardenFlower:nth-child(2n){animation-delay:.5s;}
+.gardenFlower:nth-child(3n){animation-delay:1s;}
+.gardenFlower:nth-child(4n){animation-delay:1.5s;}
+.gardenFlower:nth-child(5n){animation-delay:2s;}
+
+@keyframes flowerSway{
+  0%,100%{transform:rotate(-3deg) translateY(0);}
+  50%{transform:rotate(3deg) translateY(-5px);}
+}
+
+/* HAPPY */
+
+.garden-happy .gardenScene{
+  background:linear-gradient(180deg,#aee5ff 0%,#e7f8ff 43%,#a8dc83 44%,#62b65d 100%);
+}
+
+.garden-happy .gardenField{
+  background:linear-gradient(180deg,#8ed36f,#52a94f);
+}
+
+.garden-happy .gardenFlower{
+  font-size:44px;
+}
+
+/* OKAY */
+
+.garden-okay .gardenScene{
+  background:linear-gradient(180deg,#cbd7e3 0%,#e7edf2 45%,#b0d497 46%,#79b66d 100%);
+}
+
+.garden-okay .gardenSun{
+  display:none;
+}
+
+/* SAD */
+
+.garden-sad .gardenScene{
+  background:linear-gradient(180deg,#9ca9b4 0%,#c3c6c4 45%,#9d9d69 46%,#77744d 100%);
+}
+
+.garden-sad .gardenField{
+  background:linear-gradient(180deg,#9b9c61,#727246);
+}
+
+.garden-sad .gardenFlower{
+  filter:grayscale(.55) brightness(.65);
+  transform:rotate(12deg);
+}
+
+/* ANXIOUS */
+
+.garden-anxious .gardenScene{
+  background:linear-gradient(180deg,#d5e1e8 0%,#eef2f2 48%,#b5d2a0 49%,#80ad72 100%);
+}
+
+.garden-anxious .flowerBed{
+  justify-content:space-evenly;
+}
+
+/* HEARTBROKEN */
+
+.garden-heartbroken .gardenScene{
+  background:linear-gradient(180deg,#66778a 0%,#9ba8b2 48%,#78906c 49%,#557151 100%);
+}
+
+.garden-heartbroken .gardenField{
+  background:linear-gradient(180deg,#718f65,#526b4d);
+}
+
+.garden-heartbroken .gardenFlower{
+  filter:grayscale(.3) brightness(.65);
+  transform:rotate(10deg);
+}
+
+/* RAIN */
+
+.gardenRain{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  display:flex;
+  justify-content:space-around;
+  overflow:hidden;
+  color:rgba(190,220,245,.8);
+  font-size:18px;
+  line-height:28px;
+  letter-spacing:5px;
+  pointer-events:none;
+}
+
+.gardenRain span{
+  display:block;
+  animation:rainFall 1.1s linear infinite;
+}
+
+.gardenRain span:nth-child(2){animation-delay:.25s;}
+.gardenRain span:nth-child(3){animation-delay:.5s;}
+.gardenRain span:nth-child(4){animation-delay:.75s;}
+
+@keyframes rainFall{
+  from{transform:translateY(-180px);}
+  to{transform:translateY(350px);}
+}
