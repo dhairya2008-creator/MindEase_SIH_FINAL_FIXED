@@ -128,14 +128,27 @@ function Garden({mood,onMood}){
           <div className="gardenSoil"></div>
 
           <div className="flowerBed">
-            {s.flowers.map((flower,i)=>(
-              <span
-                key={i}
-                className={`gardenFlower flower${i%6}`}
-              >
-                {flower}
-              </span>
-            ))}
+            {Array.from({length:s.flowerCount}).map((_,i)=>(
+  <div
+    key={i}
+    className={`gardenFlower ${s.flowerMood} gf${i%7}`}
+  >
+    <div className="stem"></div>
+
+    <div className="leaves">
+      <span></span>
+      <span></span>
+    </div>
+
+    <div className="petals">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <b></b>
+    </div>
+  </div>
+))}
           </div>
 
         </div>
